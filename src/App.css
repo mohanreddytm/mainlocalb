@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-padding-top: 50px;
-  height: 100vh;
+  padding-top: 50px;
+
+  min-height: 100vh;
   background-color: #f0f0f0;
 }
 
@@ -29,6 +30,7 @@ padding-top: 50px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   width: 300px;
+  position: relative;
 }
 
 .form-header {
@@ -80,15 +82,15 @@ padding-top: 50px;
 
 
 .card-container{
-  min-height: 200px;
-  min-width: 400px;
-  border-radius: 4px;
+  width: min(400px, 80%);
+  border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 40px;
+  padding: 20px 10px;
 }
 
 .loader-container{
@@ -111,4 +113,115 @@ padding-top: 50px;
   font-size: 12px;
   margin-top: 4px;
   display: none; /* Initially hidden */
+}
+
+.card-items{
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 10px;
+  border-left: 3px solid #5fc664;
+
+}
+
+.special-one{
+  background-color: #45a049;
+  border-radius: 3px;
+  color: white;
+  padding: 0px 4px;
+}
+
+.star-icon{
+  color: #45a049;
+  margin-left: 4px;
+  margin-top: 2px;
+}
+
+.regerate-button{
+  border: #45a049 2px solid;
+  background-color: transparent;
+  border-radius: 4px;
+  color: #45a049;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  outline: none;
+  margin:10px 20px;
+  transition: all 0.3s ease;
+
+
+}
+
+.regerate-button:hover{
+  background-color: #45a049;
+  color: #ffffff;
+}
+
+@keyframes zoomer {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+  
+}
+
+.warning-of-submit-one{
+  box-shadow: 0px 0px 5px 0px #b4b4b4;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+  bottom: -120px;
+  background-color: white;
+  right: -20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  animation: zoomer 0.3s ease-in-out;
+
+
+}
+
+.warning-of-submit-one p{
+  color: rgb(228, 116, 116);
+  margin: 4px 0px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.close-button-warning{
+
+  position: absolute;
+background-color: #666;
+border-radius: 1px;
+/* align-self: flex-end; */
+  top: 0;
+  right: 0;
+  border-top-right-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+.regerate-button-container{
+  display: flex;
+  align-items: center;
+}
+
+.loader-container{
+  height: 200px;
+  /* width: 80vw; */
+}
+
+@media screen and (max-width: 700px) {
+  .regerate-button:hover{
+    background-color: #ffffff;
+    color: #45a049;
+  }
+  .card-container{
+    /* max-width: 80vw;   */
+    /* background-color: pink; */
+  }
+
 }
